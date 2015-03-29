@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IMCommunicationDelegate.h"
+#import "IMCommunication.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, IMCommunicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property NSInteger *updatedToQuote;
+@property (strong, nonatomic) IMCommunication *communicator;
 
 @end
 
