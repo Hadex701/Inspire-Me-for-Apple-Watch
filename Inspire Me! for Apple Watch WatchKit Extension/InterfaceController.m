@@ -32,9 +32,10 @@
     [super awakeWithContext:context];
 
     // Configure interface objects here.
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.emalpopal.inspireme"];
     
     //initiating value for what the max update to is
-    self.updatedToQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatedTo"];
+    self.updatedToQuote = [shared integerForKey:@"UpdatedTo"];
     
     //Load an initial quote and author - based upon where they left off
     [self newQuote];
@@ -56,7 +57,9 @@
     
     //load a new quote and update necessary values
     
-    self.currentlyAtQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"CurrentlyAt"];
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.emalpopal.inspireme"];
+    
+    self.currentlyAtQuote = [shared integerForKey:@"CurrentlyAt"];
     
     
     NSLog(@"%d %d", self.currentlyAtQuote, self.updatedToQuote);
@@ -68,7 +71,7 @@
     NSLog(@"%d %d", self.currentlyAtQuote, self.updatedToQuote);
     
     //unarchive
-    NSData *quotesData = [[NSUserDefaults standardUserDefaults] objectForKey:@"quotes"];
+    NSData *quotesData = [shared objectForKey:@"quotes"];
     self.quotes = (NSArray*)[NSKeyedUnarchiver unarchiveObjectWithData:quotesData];
     
     IMQuote *temp = [[IMQuote alloc] init];
@@ -110,7 +113,8 @@
     
     //updating currently at
     self.currentlyAtQuote++;
-    [[NSUserDefaults standardUserDefaults] setInteger:self.currentlyAtQuote forKey:@"CurrentlyAt"];
+    [shared setInteger:self.currentlyAtQuote forKey:@"CurrentlyAt"];
+    [shared synchronize];
     
 }
 

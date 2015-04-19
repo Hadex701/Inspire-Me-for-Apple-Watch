@@ -75,7 +75,11 @@
     
     //Need to check current NS user default for what quote the user is on and what quote the user has been updated to after getting or failing to get device token.
     
-    self.updatedToQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatedTo"];
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.emalpopal.inspireme"];
+    self.updatedToQuote = [shared integerForKey:@"UpdatedTo"];
+    
+    
+    //self.updatedToQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatedTo"];
     
     //check the server if this device is up to date or not. If not proceed with asking for an update
     
@@ -104,8 +108,11 @@
     
     //Need to check current NS user default for what quote the user is on and what quote the user has been updated to after getting or failing to get device token.
     
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.emalpopal.inspireme"];
+    self.updatedToQuote = [shared integerForKey:@"UpdatedTo"];
     
-    self.updatedToQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatedTo"];
+    
+    //self.updatedToQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatedTo"];
     
     //check the server if this device is up to date or not. If not proceed with asking for an update
     
@@ -143,13 +150,16 @@
     
     //Now that we have our array of custom objects we need to user default it and update updated to...
     
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.emalpopal.inspireme"];
+    
     //archive
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:quotes ];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"quotes"];
+    [shared setObject:data forKey:@"quotes"];
+    [shared synchronize];
     
     //updating the updated to
-    [[NSUserDefaults standardUserDefaults] setInteger:[quotes count] forKey:@"UpdatedTo"];
-    
+    [shared setInteger:[quotes count] forKey:@"UpdatedTo"];
+    [shared synchronize];
     
     
 }
