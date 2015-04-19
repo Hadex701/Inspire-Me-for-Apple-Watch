@@ -15,8 +15,6 @@
 		24270ED91ABA6BB900011F93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24270ED71ABA6BB900011F93 /* LaunchScreen.xib */; };
 		24270EE51ABA6BB900011F93 /* Inspire_Me__for_Apple_WatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24270EE41ABA6BB900011F93 /* Inspire_Me__for_Apple_WatchTests.m */; };
 		24270EF91ABB6B9E00011F93 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24270EF81ABB6B9E00011F93 /* InterfaceController.m */; };
-		24270EFC1ABB6B9E00011F93 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24270EFB1ABB6B9E00011F93 /* NotificationController.m */; };
-		24270EFF1ABB6B9E00011F93 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24270EFE1ABB6B9E00011F93 /* GlanceController.m */; };
 		24270F011ABB6B9E00011F93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24270F001ABB6B9E00011F93 /* Images.xcassets */; };
 		24270F051ABB6B9E00011F93 /* Inspire Me! for Apple Watch WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 24270F041ABB6B9E00011F93 /* Inspire Me! for Apple Watch WatchKit App.app */; };
 		24270F0D1ABB6B9E00011F93 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24270F0B1ABB6B9E00011F93 /* Interface.storyboard */; };
@@ -90,10 +88,6 @@
 		24270EF61ABB6B9E00011F93 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		24270EF71ABB6B9E00011F93 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
 		24270EF81ABB6B9E00011F93 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		24270EFA1ABB6B9E00011F93 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		24270EFB1ABB6B9E00011F93 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		24270EFD1ABB6B9E00011F93 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
-		24270EFE1ABB6B9E00011F93 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
 		24270F001ABB6B9E00011F93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24270F041ABB6B9E00011F93 /* Inspire Me! for Apple Watch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspire Me! for Apple Watch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24270F0A1ABB6B9E00011F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,10 +202,6 @@
 			children = (
 				24270EF71ABB6B9E00011F93 /* InterfaceController.h */,
 				24270EF81ABB6B9E00011F93 /* InterfaceController.m */,
-				24270EFA1ABB6B9E00011F93 /* NotificationController.h */,
-				24270EFB1ABB6B9E00011F93 /* NotificationController.m */,
-				24270EFD1ABB6B9E00011F93 /* GlanceController.h */,
-				24270EFE1ABB6B9E00011F93 /* GlanceController.m */,
 				24270F001ABB6B9E00011F93 /* Images.xcassets */,
 				24270EF41ABB6B9E00011F93 /* Supporting Files */,
 			);
@@ -433,10 +423,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				24270F1E1ABE0EE400011F93 /* IMCommunication.m in Sources */,
-				24270EFC1ABB6B9E00011F93 /* NotificationController.m in Sources */,
 				248E8F8E1AC8852B008E6022 /* IMQuotesBuilder.m in Sources */,
 				24270EF91ABB6B9E00011F93 /* InterfaceController.m in Sources */,
-				24270EFF1ABB6B9E00011F93 /* GlanceController.m in Sources */,
 				248E8F891AC88345008E6022 /* IMQuote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

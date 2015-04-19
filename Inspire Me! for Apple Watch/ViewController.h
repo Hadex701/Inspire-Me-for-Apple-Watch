@@ -13,7 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UIButton *inspireMe;
-@property NSInteger *currentlyAtQuote;
+@property int currentlyAtQuote;
+@property int updatedToQuote;
 @property NSArray *quotes;
 
 @end

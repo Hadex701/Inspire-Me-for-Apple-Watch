@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,29 +17,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIy-g3-4Od">
-                                <rect key="frame" x="0.0" y="20" width="600" height="388"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1o2-gq-wsJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1o2-gq-wsJ">
                                 <rect key="frame" x="16" y="505" width="568" height="75"/>
-                                <state key="normal" title="Button">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="rUu-nD-dbT"/>
+                                </constraints>
+                                <state key="normal" title="Inspire Me!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="inspireMeNow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbu-ti-0T8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQe-ex-L0V">
-                                <rect key="frame" x="16" y="416" width="584" height="81"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQe-ex-L0V">
+                                <rect key="frame" x="16" y="416" width="568" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="Ksm-ec-pQD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIy-g3-4Od">
+                                <rect key="frame" x="16" y="20" width="568" height="388"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TQe-ex-L0V" firstAttribute="trailing" secondItem="cIy-g3-4Od" secondAttribute="trailing" id="4JQ-ho-aLi"/>
+                            <constraint firstItem="TQe-ex-L0V" firstAttribute="trailing" secondItem="1o2-gq-wsJ" secondAttribute="trailing" id="9Vo-9T-dlL"/>
+                            <constraint firstItem="cIy-g3-4Od" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="N1i-4F-VSG"/>
+                            <constraint firstItem="cIy-g3-4Od" firstAttribute="leading" secondItem="TQe-ex-L0V" secondAttribute="leading" id="SaI-GQ-ALM"/>
+                            <constraint firstItem="TQe-ex-L0V" firstAttribute="top" secondItem="cIy-g3-4Od" secondAttribute="bottom" constant="8" symbolic="YES" id="b5x-E1-r66"/>
+                            <constraint firstItem="1o2-gq-wsJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jrq-EY-Kt2"/>
+                            <constraint firstItem="TQe-ex-L0V" firstAttribute="leading" secondItem="1o2-gq-wsJ" secondAttribute="leading" id="nBU-W3-7rC"/>
+                            <constraint firstItem="cIy-g3-4Od" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qC5-uB-iIu"/>
+                            <constraint firstItem="1o2-gq-wsJ" firstAttribute="top" secondItem="TQe-ex-L0V" secondAttribute="bottom" constant="8" symbolic="YES" id="uuF-xP-zVs"/>
+                            <constraint firstAttribute="bottom" secondItem="1o2-gq-wsJ" secondAttribute="bottom" constant="20" symbolic="YES" id="xFQ-8O-stp"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="TQe-ex-L0V" id="ZR4-1H-MJe"/>
