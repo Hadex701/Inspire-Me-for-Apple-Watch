@@ -34,7 +34,7 @@
             
 
                 indQuotes = [parsedObject valueForKey:key];
-                NSLog(@"%@", indQuotes);
+                //NSLog(@"%@", indQuotes);
                 
                 
                 quote.quote = [indQuotes valueForKey:@"quote"];

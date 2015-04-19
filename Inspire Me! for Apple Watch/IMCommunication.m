@@ -32,11 +32,11 @@
     BOOL Result;
     NSString *myParameters = [[NSString alloc]initWithString:[NSString stringWithFormat:@"UpdatedTo=%d", currentlyAtUpdate]];
     
-    NSLog(@"Request for update check has begun");
+    //NSLog(@"Request for update check has begun");
     
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:ServerAPILoginURL]];
     
-    NSLog(@"This is your URL: %@", url);
+    //NSLog(@"This is your URL: %@", url);
     
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
@@ -54,14 +54,14 @@
     
     //Getting Status Code
     NSInteger statusCode = [HTTPResponse statusCode];
-    NSLog(@"This is the status code: %ld", (long)statusCode);
+    //NSLog(@"This is the status code: %ld", (long)statusCode);
     
     
-    NSLog(@"This is your response: %@", response);
+    //NSLog(@"This is your response: %@", response);
     
     //Checking cookie storage
     
-    NSLog(@"Testing: %@", [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:@"http://www.geccom.com/quoteme/"]]);
+    //NSLog(@"Testing: %@", [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:@"http://www.geccom.com/quoteme/"]]);
     
     if (statusCode == 202) {
         Result = YES;
@@ -83,7 +83,7 @@
     
     
     NSURL *url = [[NSURL alloc] initWithString:ServerAPIRequestURL];
-    NSString *myParameters = [[NSString alloc]initWithString:[NSString stringWithFormat:@"device_id=tester2"]];
+    NSString *myParameters = [[NSString alloc]initWithString:[NSString stringWithFormat:@"device_id=%@", myDeviceToken]];
     
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
@@ -100,9 +100,7 @@
     
    // [self.receivedData appendData:[NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error]];
     
-    
-    
-        NSLog(@"%@", response);
+        //NSLog(@"%@", response);
         
         if (error) {
             [self.delegate fetchingQuotesFailedWithError:error];
@@ -123,9 +121,6 @@
     //Sending the data received back to the application
     
     [self.delegate receivedQuotesJSON:self.receivedData];
-    
-    
-    
     
     
      //testing area

@@ -10,8 +10,8 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="IMInterfaceController">
                     <items>
-                        <label alignment="center" verticalAlignment="bottom" text="Author" id="Wev-TA-bav"/>
-                        <label width="136" height="85" alignment="left" text="Quote" textAlignment="left" numberOfLines="4" id="XFU-nT-BPt"/>
+                        <label alignment="left" text="Quote" textAlignment="center" numberOfLines="0" id="XFU-nT-BPt"/>
+                        <label alignment="center" verticalAlignment="bottom" text="Author" textAlignment="center" id="Wev-TA-bav"/>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Inspire Me!" id="exy-2Z-hQM">
                             <connections>
                                 <action selector="inspireMe" destination="AgC-eL-Hgc" id="pW2-kJ-NWC"/>

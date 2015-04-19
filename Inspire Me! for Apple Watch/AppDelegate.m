@@ -28,11 +28,6 @@
     
     //[application registerusernotificationsettings:mysettings]; in case we want to implement actions later
     
-
-
-    
-    
-    
     return YES;
 }
 
@@ -71,15 +66,13 @@
     token = [token stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
 
-    NSLog(@"New Token: %@", token);
+    //NSLog(@"New Token: %@", token);
     
     //Need to check current NS user default for what quote the user is on and what quote the user has been updated to after getting or failing to get device token.
     
     NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.emalpopal.inspireme"];
     self.updatedToQuote = [shared integerForKey:@"UpdatedTo"];
-    
-    
-    //self.updatedToQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatedTo"];
+    self.currentlyAtQuote = [shared integerForKey:@"CurrentlyAt"];
     
     //check the server if this device is up to date or not. If not proceed with asking for an update
     
@@ -94,22 +87,23 @@
     result = [self.communicator UpdateCheck: self.updatedToQuote];
     
     if(result) {
-        NSLog(@"Result is true");
+      //  NSLog(@"Result is true");
         
         //Need to request an update
-        
+        [self.communicator RequestUpdate: self.currentlyAtQuote : token];
         
     }
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
-    NSLog(@"Failed to get token, error: %@", error);
+    //NSLog(@"Failed to get token, error: %@", error);
     
     //Need to check current NS user default for what quote the user is on and what quote the user has been updated to after getting or failing to get device token.
     
     NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.emalpopal.inspireme"];
     self.updatedToQuote = [shared integerForKey:@"UpdatedTo"];
+    self.currentlyAtQuote = [shared integerForKey:@"CurrentlyAt"];
     
     
     //self.updatedToQuote = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatedTo"];
@@ -127,12 +121,8 @@
     result = [self.communicator UpdateCheck: self.updatedToQuote];
     
     if(result) {
-        NSLog(@"Result is true");
-        
         //Need to request an update
-        NSInteger *tester = 5;
-        
-        [self.communicator RequestUpdate: tester : @"nothing here"];
+        [self.communicator RequestUpdate: self.currentlyAtQuote : @"No Token Authorization"];
     }
     
     

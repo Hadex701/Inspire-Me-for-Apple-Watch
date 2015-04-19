@@ -23,8 +23,6 @@
     //Load an initial quote and author - based upon where they left off
     [self newQuote];
     
-    
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -43,7 +41,7 @@
     self.currentlyAtQuote = [shared integerForKey:@"CurrentlyAt"];
     
     
-    NSLog(@"%d %d", self.currentlyAtQuote, self.updatedToQuote);
+    //NSLog(@"%d %d", self.currentlyAtQuote, self.updatedToQuote);
     
     if (self.currentlyAtQuote == self.updatedToQuote) {
         self.currentlyAtQuote = 0;
